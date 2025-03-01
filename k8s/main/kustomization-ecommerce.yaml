@@ -1,0 +1,12 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: test-ecommerce
+  namespace: test-ecommerce
+spec:
+  interval: 1m0s
+  path: ./k8s/main
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: test-ecommerce
