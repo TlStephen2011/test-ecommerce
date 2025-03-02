@@ -9,11 +9,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ecommerce-auth-service
+      app: ecommerce-api
   template:
     metadata:
       labels:
-        app: ecommerce-auth-service
+        app: ecommerce-api
     spec:
       containers:
         - name: test-ecommerce-api
