@@ -4,3 +4,4 @@ namespace: test-ecommerce
 resources:
   - ../app/deployment.yaml
   - ../auth-service/deployment.yaml
+  - ../app/ingress.yaml

@@ -29,11 +29,10 @@ metadata:
   name: ecommerce-app-service
   namespace: test-ecommerce
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: ecommerce-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 32001
