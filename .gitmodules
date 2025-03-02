@@ -4,3 +4,6 @@
 [submodule "auth-service"]
 	path = auth-service
 	url = https://github.com/TlStephen2011/test-ecommerce-auth-service
+[submodule "ecommerce-api"]
+	path = ecommerce-api
+	url = .\\ecommerce-api\\
