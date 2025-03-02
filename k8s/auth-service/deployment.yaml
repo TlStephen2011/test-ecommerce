@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-auth-service-deployment
+  namespace: test-ecommerce
+  labels:
+    app: ecommerce-auth-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecommerce-auth-service
+  template:
+    metadata:
+      labels:
+        app: ecommerce-auth-service
+    spec:
+      containers:
+        - name: test-auth-service
+          image: registry.hextech.online/test-ecommerce/ecommerce-auth-service:latest
+          ports:
+            - containerPort: 5000
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-auth-service
+  namespace: test-ecommerce
+spec:
+  type: NodePort
+  selector:
+    app: ecommerce-auth-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+      nodePort: 32002
