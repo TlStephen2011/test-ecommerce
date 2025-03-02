@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecommerce-auth-service-deployment
+  name: ecommerce-api-deployment
   namespace: test-ecommerce
   labels:
-    app: ecommerce-auth-service
+    app: ecommerce-api
 spec:
   replicas: 1
   selector:
@@ -16,8 +16,8 @@ spec:
         app: ecommerce-auth-service
     spec:
       containers:
-        - name: test-auth-service
-          image: registry.hextech.online/test-ecommerce/ecommerce-auth-service:0.0.1
+        - name: test-ecommerce-api
+          image: registry.hextech.online/test-ecommerce/ecommerce-api:latest
           ports:
             - containerPort: 5000
       imagePullSecrets:
@@ -26,12 +26,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecommerce-auth-service
+  name: ecommerce-api-service
   namespace: test-ecommerce
 spec:
   type: ClusterIP
   selector:
-    app: ecommerce-auth-service
+    app: ecommerce-api
   ports:
     - protocol: TCP
       port: 80
