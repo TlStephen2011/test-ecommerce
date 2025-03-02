@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: test-ecommerce-api
-          image: registry.hextech.online/test-ecommerce/ecommerce-api:latest
+          image: registry.hextech.online/test-ecommerce/ecommerce-api:0.0.1
           ports:
             - containerPort: 5000
       imagePullSecrets:
