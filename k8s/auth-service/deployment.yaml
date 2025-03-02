@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: test-auth-service
-          image: registry.hextech.online/test-ecommerce/ecommerce-auth-service:0.0.1
+          image: registry.hextech.online/test-ecommerce/ecommerce-auth-service:0.0.2
           ports:
             - containerPort: 5000
       imagePullSecrets:
